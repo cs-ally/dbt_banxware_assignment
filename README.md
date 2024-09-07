@@ -1,22 +1,33 @@
 # Banxware Sales Analysis Assignment
 
+## Overview
+
+This project is a data engineering take-home assignment designed to create a data pipeline that processes and analyzes fictional sales data. Using dbt (Data Build Tool) and Snowflake as the data warehouse, the project performs the following tasks:
+
+- Loads raw sales and customer data from CSV files into Snowflake.
+- Transforms the raw data into an analysis-ready format.
+- Provides SQL queries to answer sales team question.
+
+## Prerequisites
+
+Before running this project, ensure you have the following tools and accounts set up:
+
+- Python 3.x installed on your local machine
+- A Snowflake account
+- dbt (Data Build Tool) installed
+
 ## Project Setup
 
-1. Set up Snowflake account.
-2. Create project folder.
-3. Create python environment.
-4. Install dbt-snowflake through pip install.
-5. Create /.dbt folder at root folder.
-6. Run `dbt init` and follow instruction to configure connection with Snowflake.
-7. Run `dbt debug` to test the set up.
-8. Move raw data to seeds folder. Set up aliases in seed configuration to change table names in Snowflake.
-9. Use `dbt seed` to load raw data into Snowflake.
-10. Configure tranformation in models/examples folder.
-11. Run `dbt run` to perform transformations.
+1. Clone this repository to your local machine.
+2. Install Python dependencies by running `pip install -r requirements.txt`
+3. Configure profiles.yml file in your `~/.dbt` directory with your actual Snowflake credentials.
+4. Run `dbt debug` to test the connection.
+5. Run `dbt seed` to load raw data into Snowflake.
+6. Run `dbt run --models transformed_sales_data` to perform data transfomations.
 
 ## Querying the Data
 
-1. Use the queries in the `queries/` folder to answer the sales team's questions.
+1. Copy queries in the `queries` folder to Snowflake worksheet to answer the sales team's questions.
 2. Queries:
    - `top_5_products_2023.sql`: What are the top 5 products by total sales amount in the year 2023?
    - `top_5_customers_2023.sql`: What are the names of the top 5 customers by total sales amount in the year 2023?
