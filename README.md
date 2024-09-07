@@ -14,16 +14,22 @@ Before running this project, ensure you have the following tools and accounts se
 
 - Python 3.x installed on your local machine
 - A Snowflake account
-- dbt (Data Build Tool) installed
+- Python virual environment manager (e.g. 'venv')
+- The required Python dependencies will be installed via requirements.txt
+
+**Note:** This project was implemented and tested on macOS. It should work on other operating systems with slight adjustments to certain commands (e.g., activating virtual environments).
 
 ## Project Setup
 
-1. Clone this repository to your local machine.
-2. Install Python dependencies by running `pip install -r requirements.txt`
-3. Configure profiles.yml file in your `~/.dbt` directory with your actual Snowflake credentials.
-4. Run `dbt debug` to test the connection.
-5. Run `dbt seed` to load raw data into Snowflake.
-6. Run `dbt run --models transformed_sales_data` to perform data transfomations.
+1. Clone this repository to your local machine and navigate to the project folder.
+2. Create and activate Python virtual environment in the project folder.
+To create a virtual environment with `venv`, run: `python3 -m venv venv`.
+To activate the virtual environment with `venv`: `source venv/bin/activate`.
+3. Install Python dependencies by running `pip install -r requirements.txt`.
+4. Create `~/.dbt` folder and add `profiles.yml` file with your actual Snowflake credentials and database information.
+5. Run `dbt debug` from the project folder to test the connection.
+6. Run `dbt seed` to load raw data into Snowflake.
+7. Run `dbt run --models transformed_sales_data` to perform data transfomations.
 
 ## Querying the Data
 
